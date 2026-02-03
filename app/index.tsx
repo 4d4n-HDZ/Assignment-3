@@ -63,7 +63,7 @@ export default function Feed() {
           {/* Stats Row */}
           <View style={s.statsRow}>
             <View>
-              <Text style={{ marginBottom: 10, fontWeight: 600}}>NASA</Text>
+              <Text style={{ marginBottom: 10, fontWeight: 700}}>NASA</Text>
               <Text style={s.stat}>4,600</Text>
               <Text style={s.statLabel}>posts</Text>
             </View>
@@ -212,6 +212,8 @@ const s = StyleSheet.create({
     height: 75,
     width: 75,
     borderRadius: 75,
+    borderWidth: 0.5,
+    borderColor: "#adadad",
     overflow: "hidden",
   },
   profilePicture: {
