@@ -6,7 +6,6 @@ import {
   View,
   StyleSheet,
 } from "react-native";
-import { linear } from "react-native-reanimated";
 
 const { height: screenHeight, width: screenWidth } = Dimensions.get("window");
 
@@ -18,12 +17,13 @@ export default function RocketTakeOff({ launchSignal }: Props) {
   const ROCKET_WIDTH = 200;
   const ROCKET_HEIGHT = 700;
 
-  const startY =screenHeight + ROCKET_HEIGHT; 
-  const endY = -ROCKET_HEIGHT;                 
+  const startY = screenHeight + 20;
+  const endY = -ROCKET_HEIGHT - 20;
 
   const translateY = useRef(new Animated.Value(startY)).current;
 
   useEffect(() => {
+    console.log("Rocket launchSignal changed:", launchSignal);
     translateY.stopAnimation();
     translateY.setValue(startY);
 

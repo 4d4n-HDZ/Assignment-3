@@ -16,6 +16,7 @@ import {
 } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useState } from "react";
+import RocketTakeOff from "./rocket";
 
 //gets screen width and makes each image 1 thrid of the screen to make all the images even
 const screenWidth = Dimensions.get("window").width;
@@ -23,9 +24,16 @@ const imageSize = screenWidth / 3;
 
 export default function Feed() {
   const [activeTab, setActiveTab] = useState("images");
+  const [launchSignal, setLaunchSignal] = useState(0);
+
+  const handleFollowPress = () => {
+    console.log("Follow pressed -> launching rocket");
+    setLaunchSignal((n) => n + 1);
+  };
 
   return (
     <SafeAreaView style={s.container}>
+      <RocketTakeOff launchSignal={launchSignal} />
       <ScrollView>
         {/* Nav Row */}
         <View style={s.navRow}>
@@ -96,9 +104,9 @@ export default function Feed() {
 
         {/* Contact Section */}
         <View style={s.contactButtons}>
-          <View style={[s.buttons, s.followButton]}>
+          <Pressable onPress={handleFollowPress} style={[s.buttons, s.followButton]}>
             <Text style={[s.buttonText, s.buttonTextPrimary]}>Follow</Text>
-          </View>
+          </Pressable>
           <View style={[s.buttons, s.altButton]}>
             <Text style={s.buttonText}>Message</Text>
           </View>
