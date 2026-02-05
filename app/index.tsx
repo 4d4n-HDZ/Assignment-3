@@ -6,6 +6,7 @@ import {
   Dimensions,
   Pressable,
   ScrollView,
+  Alert,
 } from "react-native";
 import {
   Entypo,
@@ -31,10 +32,17 @@ export default function Feed() {
     setLaunchSignal((n) => n + 1);
   };
 
+  // required Alert button
+  const handleAlertPress = () => {
+    Alert.alert("Alert Button pressed");
+  };
+
   return (
     <SafeAreaView style={s.container}>
       <RocketTakeOff launchSignal={launchSignal} />
-      <ScrollView>
+
+      {/* paddingBottom so bottom button doesn’t cover content */}
+      <ScrollView contentContainerStyle={s.scrollContent}>
         {/* Nav Row */}
         <View style={s.navRow}>
           <View style={s.navLeft}>
@@ -104,7 +112,10 @@ export default function Feed() {
 
         {/* Contact Section */}
         <View style={s.contactButtons}>
-          <Pressable onPress={handleFollowPress} style={[s.buttons, s.followButton]}>
+          <Pressable
+            onPress={handleFollowPress}
+            style={[s.buttons, s.followButton]}
+          >
             <Text style={[s.buttonText, s.buttonTextPrimary]}>Follow</Text>
           </Pressable>
           <View style={[s.buttons, s.altButton]}>
@@ -115,8 +126,12 @@ export default function Feed() {
           </View>
         </View>
 
-        {/* Circl Icons */}
-        <View style={s.circleIcons}>
+        {/* Circle Icons now scroll horizontally so it doesn’t break */}
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={s.circleIcons}
+        >
           <View style={s.circleItem}>
             <View style={s.iconCircle}>
               <MaterialIcons name="phone-iphone" size={24} color="#0066ff" />
@@ -151,7 +166,7 @@ export default function Feed() {
             </View>
             <Text style={s.circleText}>Join Us</Text>
           </View>
-        </View>
+        </ScrollView>
 
         {/* Grid */}
         <View style={s.imageGrid}>
@@ -205,6 +220,13 @@ export default function Feed() {
           />
         </View>
       </ScrollView>
+
+      {/* required Alert button at bottom */}
+      <View style={s.bottomBar}>
+        <Pressable style={s.alertButton} onPress={handleAlertPress}>
+          <Text style={s.alertButtonText}>Alert</Text>
+        </Pressable>
+      </View>
     </SafeAreaView>
   );
 }
@@ -213,6 +235,12 @@ const s = StyleSheet.create({
   container: {
     flex: 1,
   },
+
+  // ✅ YOUR PART
+  scrollContent: {
+    paddingBottom: 90,
+  },
+
   bio: {
     paddingHorizontal: 16,
     paddingTop: 10,
@@ -303,11 +331,14 @@ const s = StyleSheet.create({
   buttonTextPrimary: {
     color: "#fff",
   },
+
+  // circleIcons now used as ScrollView contentContainerStyle
   circleIcons: {
     flexDirection: "row",
     paddingHorizontal: 16,
     marginTop: 14,
     gap: 20,
+    paddingBottom: 6,
   },
   circleItem: {
     alignItems: "center",
@@ -328,5 +359,29 @@ const s = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginBottom: 6,
+  },
+
+  // bottom alert bar/button
+  bottomBar: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    bottom: 0,
+    padding: 14,
+    backgroundColor: "white",
+    borderTopWidth: 1,
+    borderTopColor: "#e6e6e6",
+  },
+  alertButton: {
+    height: 48,
+    borderRadius: 12,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#111",
+  },
+  alertButtonText: {
+    color: "white",
+    fontSize: 16,
+    fontWeight: "700",
   },
 });
