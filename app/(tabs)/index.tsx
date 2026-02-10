@@ -79,7 +79,7 @@ export default function Feed() {
               <View style={s.profilePicContainer}>
                 <Image
                   style={s.profilePicture}
-                  source={require("../assets/images/pfp.jpeg")}
+                  source={require("../../assets/images/pfp.jpg")}
                 />
               </View>
 
@@ -125,15 +125,15 @@ export default function Feed() {
                 <View style={s.followedRow}>
                   <View style={s.avatarStack}>
                     <Image
-                      source={require("../assets/images/1 Orange and black.jpg")}
+                      source={require("../../assets/images/1 Orange and black.jpg")}
                       style={[s.iconFollowed, s.avatar]}
                     />
                     <Image
-                      source={require("../assets/images/2 pink and black.png")}
+                      source={require("../../assets/images/2 pink and black.png")}
                       style={[s.iconFollowed, s.avatar, s.avatarOverlap]}
                     />
                     <Image
-                      source={require("../assets/images/3 blue and white.jpg")}
+                      source={require("../../assets/images/3 blue and white.jpg")}
                       style={[s.iconFollowed, s.avatar, s.avatarOverlap]}
                     />
                   </View>
@@ -252,51 +252,51 @@ export default function Feed() {
           <View style={s.imageGrid}>
             <Image
               style={s.gridImage}
-              source={require("../assets/images/post1.jpg")}
+              source={require("../../assets/images/post1.jpg")}
             />
             <Image
               style={s.gridImage}
-              source={require("../assets/images/post2.jpg")}
+              source={require("../../assets/images/post2.jpg")}
             />
             <Image
               style={s.gridImage}
-              source={require("../assets/images/post3.jpg")}
+              source={require("../../assets/images/post3.jpg")}
             />
             <Image
               style={s.gridImage}
-              source={require("../assets/images/post4.jpg")}
+              source={require("../../assets/images/post4.jpg")}
             />
             <Image
               style={s.gridImage}
-              source={require("../assets/images/post5.jpg")}
+              source={require("../../assets/images/post5.jpg")}
             />
             <Image
               style={s.gridImage}
-              source={require("../assets/images/post6.jpg")}
+              source={require("../../assets/images/post6.jpg")}
             />
             <Image
               style={s.gridImage}
-              source={require("../assets/images/post1.jpg")}
+              source={require("../../assets/images/post1.jpg")}
             />
             <Image
               style={s.gridImage}
-              source={require("../assets/images/post2.jpg")}
+              source={require("../../assets/images/post2.jpg")}
             />
             <Image
               style={s.gridImage}
-              source={require("../assets/images/post3.jpg")}
+              source={require("../../assets/images/post3.jpg")}
             />
             <Image
               style={s.gridImage}
-              source={require("../assets/images/post4.jpg")}
+              source={require("../../assets/images/post4.jpg")}
             />
             <Image
               style={s.gridImage}
-              source={require("../assets/images/post5.jpg")}
+              source={require("../../assets/images/post5.jpg")}
             />
             <Image
               style={s.gridImage}
-              source={require("../assets/images/post6.jpg")}
+              source={require("../../assets/images/post6.jpg")}
             />
           </View>
         </View>
