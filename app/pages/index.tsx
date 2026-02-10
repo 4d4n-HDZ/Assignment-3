@@ -79,7 +79,7 @@ export default function Feed() {
               <View style={s.profilePicContainer}>
                 <Image
                   style={s.profilePicture}
-                  source={require("../assets/images/pfp.jpeg")}
+                  source={require("../assets/images/pfp.jpg")}
                 />
               </View>
 
