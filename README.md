@@ -1,50 +1,44 @@
-# Welcome to your Expo app 👋
+Assignment Overview
+This assignment requires students to design and implement a professional multi screen mobile application using Expo. Working in groups of three, students will recreate the layout and navigation structure of a real world mobile application, demonstrating technical proficiency, collaborative development, and professional coding practices.
+Learning Outcomes
+Upon successful completion of this assignment, students will be able to:
+• Design and implement multi screen mobile applications using Expo.
+• Apply tab and stack navigation patterns correctly.
+• Recreate complex user interfaces from real world references.
+• Collaborate effectively using GitHub version control.
+• Produce clean, maintainable, and professional quality mobile application code.
+Academic Integrity
+Plagiarism detection software will be used on all submissions. Students must comply with SAIT’s Student Academic Conduct policy (A.C.3.4.3). Any form of academic misconduct may result in penalties as outlined by the institution.
+Project Instructions
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+1. Reference Application Selection
+• Select a real mobile application interface (e.g., Instagram, X, banking or shopping app).
+• Capture screenshots of at least four related screens.
+• The reference must demonstrate moderate to high interface complexity. Simple designs will not be accepted.
 
-## Get started
 
-1. Install dependencies
+2. Project Setup
+• Create a new Expo project using the TypeScript template:
+  npx create-expo-app@latest
+• Assign a meaningful project name and organize your files clearly.
+3. Screen & Navigation Requirements
+• Implement a minimum of FOUR (4) functional screens.
+• Use Tab Navigation combined with at least one Stack Navigation flow.
+• Each screen must include structured layout, icons, and consistent styling.
+• At least one screen must include dynamic content such as lists, navigation parameters, or reusable components.
+• As in the previous assignment, the core functionality of the app you are replicating does not need to be implemented, the only required functionality for this assignment is the navigation.
+4. Team Collaboration (Groups of Three)
+• Each group must contain exactly three students.
+• All members must contribute code to the GitHub repository.
+• Commit history will be reviewed to ensure equitable participation.
+5. Submission Requirements
+• Push your completed project to a GitHub repository and add all group members as collaborators.
+• Ensure the application runs successfully on both iOS and Android.
+• Submit the GitHub repository link and reference screenshots on Brightspace (D2L).
+• Optionally remove node_modules and upload the source code as a compressed file.
 
-   ```bash
-   npm install
-   ```
+Bonus (Optional – Up to 2 Extra Marks)
+• Implement light/dark theme support
+• Add simple animations or transitions
+• Add a mock authentication or profile screen
 
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
