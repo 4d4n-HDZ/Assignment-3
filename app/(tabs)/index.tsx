@@ -1,3 +1,4 @@
+
 import {
   Entypo,
   FontAwesome6,
@@ -9,6 +10,8 @@ import {
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
+import { Tabs } from "expo-router";
+import { NativeTabs } from 'expo-router/unstable-native-tabs';
 import {
   Alert,
   Dimensions,
@@ -20,7 +23,8 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import RocketTakeOff from "../rocket";
+import RocketTakeOff from "../components/rocket";
+import NavigationBar from "../components/navigation";
 
 // gets screen width and makes each image 1 third of the screen
 const screenWidth = Dimensions.get("window").width;
@@ -300,14 +304,9 @@ export default function Feed() {
             />
           </View>
         </View>
+        <View>
+        </View>
       </ScrollView>
-
-      {/* Bottom Alert */}
-      <View style={s.bottomBar}>
-        <Pressable style={s.alertButton} onPress={handleAlertPress}>
-          <Text style={s.alertButtonText}>Alert</Text>
-        </Pressable>
-      </View>
     </SafeAreaView>
   );
 }
