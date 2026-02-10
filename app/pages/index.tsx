@@ -20,7 +20,7 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import RocketTakeOff from "./rocket";
+import RocketTakeOff from "../rocket";
 
 // gets screen width and makes each image 1 third of the screen
 const screenWidth = Dimensions.get("window").width;
@@ -79,7 +79,7 @@ export default function Feed() {
               <View style={s.profilePicContainer}>
                 <Image
                   style={s.profilePicture}
-                  source={require("../assets/images/pfp.jpg")}
+                  source={require("../assets/images/pfp.jpeg")}
                 />
               </View>
 
