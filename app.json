@@ -4,7 +4,7 @@
     "slug": "appUI",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/verification-icon.png",
     "scheme": "appui",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,

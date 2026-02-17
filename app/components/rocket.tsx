@@ -47,7 +47,7 @@ export default function RocketTakeOff({ launchSignal }: Props) {
         ]}
       >
         <Animated.Image
-          source={require("../assets/images/rocket.png")}
+          source={require("../../assets/images/rocket.png")}
           resizeMode="contain"
           style={{
             position: "absolute",
