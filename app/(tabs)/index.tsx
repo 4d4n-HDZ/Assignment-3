@@ -326,7 +326,7 @@ const s = StyleSheet.create({
   separationIcons: {
     marginTop: 12,
   },
-  // ✅ YOUR PART
+  
   scrollContent: {
     paddingBottom: 90,
   },
