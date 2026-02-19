@@ -44,7 +44,8 @@ export default function Feed() {
   };
 
   return (
-    <SafeAreaView style={s.container}>
+    <SafeAreaView edges={["left", "right"]} style={s.container}>
+      <StatusBar style="dark" translucent />
       <RocketTakeOff launchSignal={launchSignal} />
 
       <ScrollView contentContainerStyle={s.scrollContent}>
@@ -66,9 +67,6 @@ export default function Feed() {
                 style={{ marginVertical: "auto" }}
               />
             </View>
-
-            <StatusBar style="dark" />
-
             <Entypo
               name="dots-three-horizontal"
               size={18}
@@ -314,6 +312,7 @@ export default function Feed() {
 const s = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#fff",
   },
   totalSpace: {
     marginTop: 15,
