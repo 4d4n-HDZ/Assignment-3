@@ -67,7 +67,6 @@ export default function Feed() {
         </View>
       </ScrollView>
 
-      {/* Post */}
       <View style={styles.postContainer}>
         <Video
           source={require("../../assets/videos/feedvideo.mp4")}
@@ -78,7 +77,6 @@ export default function Feed() {
           isMuted
         />
 
-        {/* Overlay: pfp, username, icons */}
         <View style={styles.postTextContainer}>
           <Image
             style={styles.postProfilePicture}
@@ -154,7 +152,6 @@ const styles = StyleSheet.create({
     color: "black",
   },
 
-  // ✅ Post container has a real height so the video can render correctly
   postContainer: {
     marginTop: 5,
     width: "100%",
@@ -162,13 +159,11 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
   },
 
-  // ✅ Video fills the post container
   postMedia: {
     width: "100%",
     height: "100%",
   },
 
-  // ✅ Overlay on top of video (no magic bottom numbers)
   postTextContainer: {
     position: "absolute",
     top: 10,
@@ -192,7 +187,6 @@ const styles = StyleSheet.create({
     marginRight: 6,
   },
 
-  // ✅ Push to far right
   threeDots: {
     marginLeft: "auto",
   },

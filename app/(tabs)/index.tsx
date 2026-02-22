@@ -1,4 +1,3 @@
-
 import {
   Entypo,
   FontAwesome6,
@@ -72,7 +71,6 @@ export default function Feed() {
             />
           </View>
 
-          {/* Bio Section */}
           <View style={s.bio}>
             <View style={s.topRow}>
               <View style={s.profilePicContainer}>
@@ -148,7 +146,6 @@ export default function Feed() {
             </View>
           </View>
 
-          {/* Contact Buttons */}
           <View style={s.separationFollowed}>
             <View style={s.contactButtons}>
               <Pressable
@@ -170,7 +167,6 @@ export default function Feed() {
             </View>
           </View>
 
-          {/* Circle Icons now scroll horizontally so it doesn’t break */}
           <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -232,7 +228,6 @@ export default function Feed() {
             </View>
           </ScrollView>
 
-          {/*Profile Tab Bar*/}
           <View style={s.profileTabs}>
             <View style={[s.tabItem, s.activeTab]}>
               <Ionicons name="grid-outline" size={22} />
@@ -311,15 +306,19 @@ const s = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
   },
+
   totalSpace: {
     marginTop: 15,
   },
+
   separationDesc: {
     marginTop: 5,
   },
+
   separationFollowed: {
     marginTop: 8,
   },
+
   separationIcons: {
     marginTop: 12,
   },
@@ -332,29 +331,35 @@ const s = StyleSheet.create({
     paddingHorizontal: 16,
     paddingTop: 10,
   },
+
   line: {
     fontSize: 14,
     color: "#111",
     marginTop: 2,
   },
+
   navRow: {
     flexDirection: "row",
     justifyContent: "space-between",
     paddingHorizontal: 15,
     marginBottom: 15,
   },
+
   navLeft: {
     flexDirection: "row",
     gap: 6,
   },
+
   navName: {
     fontSize: 18,
   },
+
   topRow: {
     flexDirection: "row",
     gap: 10,
     marginBottom: 15,
   },
+
   profilePicContainer: {
     height: 75,
     width: 75,
@@ -363,39 +368,47 @@ const s = StyleSheet.create({
     borderColor: "#adadad",
     overflow: "hidden",
   },
+
   profilePicture: {
     height: "100%",
     width: "100%",
   },
+
   statsRow: {
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-around",
   },
+
   stat: {
     fontWeight: "600",
     fontSize: 17,
   },
+
   statLabel: {
     fontWeight: "400",
   },
+
   imageGrid: {
     flexDirection: "row",
     flexWrap: "wrap",
   },
+
   link: {
     marginTop: 6,
   },
+
   followed: {
     marginTop: 7,
   },
+
   gridImage: {
-    //uses the screen width calculation here
     width: imageSize,
     height: 230,
     borderWidth: 0.5,
     borderColor: "#fff",
   },
+
   iconFollowed: {
     width: 32,
     height: 32,
@@ -406,12 +419,14 @@ const s = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+
   contactButtons: {
     flexDirection: "row",
     gap: 10,
     paddingHorizontal: 16,
     marginTop: 12,
   },
+
   buttons: {
     flex: 1,
     height: 34,
@@ -419,21 +434,25 @@ const s = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+
   followButton: {
     backgroundColor: "#3b5cff",
   },
+
   altButton: {
     backgroundColor: "#e6e6e6",
   },
+
   buttonText: {
     fontSize: 14,
     fontWeight: "600",
     color: "#111",
   },
+
   buttonTextPrimary: {
     color: "#fff",
   },
-  // Profile Tab Bar
+
   profileTabs: {
     flexDirection: "row",
     borderTopWidth: 8,
@@ -451,7 +470,7 @@ const s = StyleSheet.create({
     borderBottomWidth: 2,
     borderBottomColor: "#000",
   },
-  // for the profiles icons before the accounts that follows NASA
+
   followedRow: {
     flexDirection: "row",
     alignItems: "center",
@@ -468,7 +487,7 @@ const s = StyleSheet.create({
   },
 
   avatarOverlap: {
-    marginLeft: -8, // 👈 overlap amount (Instagram-like)
+    marginLeft: -8,
   },
 
   followedText: {
@@ -481,7 +500,6 @@ const s = StyleSheet.create({
     fontWeight: "600",
   },
 
-  // circleIcons now used as ScrollView contentContainerStyle
   circleIcons: {
     flexDirection: "row",
     paddingHorizontal: 16,
@@ -489,9 +507,11 @@ const s = StyleSheet.create({
     gap: 13,
     paddingBottom: 6,
   },
+
   circleItem: {
     alignItems: "center",
   },
+
   circleText: {
     fontSize: 12,
     marginTop: 6,
@@ -512,6 +532,7 @@ const s = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+
   outerCircle: {
     width: 70,
     height: 70,
@@ -522,16 +543,16 @@ const s = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+
   gapCircle: {
     width: 64,
     height: 64,
     borderRadius: 32,
-    backgroundColor: "#f2f2f2", // subtle light ring
+    backgroundColor: "#f2f2f2",
     alignItems: "center",
     justifyContent: "center",
   },
 
-  // bottom alert bar/button
   bottomBar: {
     position: "absolute",
     left: 0,
@@ -542,6 +563,7 @@ const s = StyleSheet.create({
     borderTopWidth: 1,
     borderTopColor: "#e6e6e6",
   },
+
   alertButton: {
     height: 48,
     borderRadius: 12,
@@ -549,6 +571,7 @@ const s = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#111",
   },
+
   alertButtonText: {
     color: "white",
     fontSize: 16,

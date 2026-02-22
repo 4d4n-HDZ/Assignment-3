@@ -119,7 +119,6 @@ export default function Search() {
     []
   );
 
-  // Build window blocks: 4 images + 1 video (repeated)
   const { blocks, remaining } = useMemo(() => {
     const blocks: { images: [MediaItem, MediaItem, MediaItem, MediaItem]; video: MediaItem }[] =
       [];
@@ -143,10 +142,8 @@ export default function Search() {
 
     return { blocks, remaining: items.slice(i) };
   }, [items]);
-
   return (
     <SafeAreaView style={styles.container} edges={["top"]}>
-      {/* Search bar */}
       <View style={styles.searchBar}>
         <Ionicons name="search" size={18} color="#6b7280" />
         <TextInput
@@ -155,7 +152,6 @@ export default function Search() {
           style={styles.searchInput}
         />
       </View>
-
       <ScrollView
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
@@ -169,8 +165,6 @@ export default function Search() {
             />
           </View>
         ))}
-
-        {/* Leftovers (if any) */}
         {remaining.length > 0 && (
           <View style={styles.normalGrid}>
             {remaining.map((item, idx) => {
@@ -213,7 +207,9 @@ export default function Search() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#fff" },
+  container: {
+    flex: 1, backgroundColor: "#fff"
+  },
 
   searchBar: {
     marginHorizontal: 12,
@@ -227,7 +223,10 @@ const styles = StyleSheet.create({
     borderRadius: 14,
     backgroundColor: "#f3f4f6",
   },
-  searchInput: { flex: 1, fontSize: 16, color: "#111827" },
+
+  searchInput: {
+    flex: 1, fontSize: 16, color: "#111827"
+  },
 
   scrollContent: {
     paddingHorizontal: H_PADDING,
@@ -235,36 +234,42 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 
-  // --- Window layout ---
   windowRow: {
     width: GRID_WIDTH,
     flexDirection: "row",
   },
+
   windowLeft: {
     width: TILE * 2 + GAP,
   },
+
   windowLeftRow: {
     flexDirection: "row",
   },
+
   windowRight: {
     width: TILE,
   },
 
-  // --- Tiles ---
   tile: {
     overflow: "hidden",
     borderRadius: 1,
     backgroundColor: "#e5e7eb",
   },
+
   square: {
     width: TILE,
     height: TILE,
   },
+
   tall: {
     width: TILE,
     height: DOUBLE_HEIGHT,
   },
-  media: { width: "100%", height: "100%" },
+
+  media: {
+    width: "100%", height: "100%"
+  },
 
   videoBadge: {
     position: "absolute",

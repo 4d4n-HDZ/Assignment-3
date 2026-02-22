@@ -14,7 +14,6 @@ export default function Shorts() {
         isMuted
       />
 
-      {/* right side interactive buttons */}
       <View style={styles.sideNavButtons}>
         <TouchableOpacity style={styles.iconButton}>
           <Ionicons name="heart-outline" size={28} color="white" />
@@ -38,7 +37,6 @@ export default function Shorts() {
           style={styles.logo} />
       </View>
 
-      {/* bottom text */}
       <View style={styles.bottomText}>
         <View style={styles.usernameRow}>
           <Image
@@ -78,6 +76,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "black",
   },
+
   text: {
     fontSize: 24,
     fontWeight: "bold",
@@ -119,6 +118,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 6,
   },
+
   username: {
     color: "white",
     fontSize: 16,
@@ -158,8 +158,8 @@ const styles = StyleSheet.create({
     marginRight: -6,
     borderWidth: 1,
     borderColor: "white",
-
   },
+
   ad: {
     color: "white",
     marginTop: 6,
