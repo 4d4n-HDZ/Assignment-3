@@ -1,29 +1,29 @@
-import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { ResizeMode, Video } from "expo-av";
 import { useFonts } from "expo-font";
+import React from "react";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 
 export default function Feed() {
   const [fontsLoaded] = useFonts({
     Billabong: require("../../assets/fonts/Billabong.ttf"),
   });
 
-  if (!fontsLoaded) {
-    return null;
-  }
+  if (!fontsLoaded) return null;
 
   return (
-    <View>
+    <View style={styles.page}>
       <View style={styles.topText}>
         <Ionicons name="add" size={26} color="black" />
         <Text style={styles.text}>Instagram</Text>
         <Ionicons name="heart-outline" size={26} color="black" />
       </View>
 
-      <ScrollView 
-        horizontal={true}  
+      <ScrollView
+        horizontal
         showsHorizontalScrollIndicator={false}
-        contentContainerStyle={styles.storiesContainer}>
-
+        contentContainerStyle={styles.storiesContainer}
+      >
         <View style={styles.storyPicsEnviroment}>
           <View style={styles.storyItem}>
             <Image
@@ -66,31 +66,47 @@ export default function Feed() {
           </View>
         </View>
       </ScrollView>
-      
+
+      {/* Post */}
       <View style={styles.postContainer}>
-        {/* post picture */}
-        <Image 
-        style={styles.photo}
-        source={require("../../assets/images/minecraft.png")}
+        <Video
+          source={require("../../assets/videos/feedvideo.mp4")}
+          style={styles.postMedia}
+          resizeMode={ResizeMode.COVER}
+          shouldPlay
+          isLooping
+          isMuted
         />
-        {/* pfp, username */}
+
+        {/* Overlay: pfp, username, icons */}
         <View style={styles.postTextContainer}>
-          <Image 
-          style={styles.postProfilePicture}
-          source={require("../../assets/images/creeper.png")}/>
-          <Text style={styles.postUsername}>
-            minecraft
-          </Text>
+          <Image
+            style={styles.postProfilePicture}
+            source={require("../../assets/images/creeper.png")}
+          />
+
+          <Text style={styles.postUsername}>minecraft</Text>
+
           <Ionicons name="checkmark-circle" size={10} color="white" />
-          <Ionicons style={styles.threeDots}name="ellipsis-horizontal" size={20} color="white" />
+
+          <Ionicons
+            style={styles.threeDots}
+            name="ellipsis-horizontal"
+            size={20}
+            color="white"
+          />
         </View>
       </View>
     </View>
-
   );
 }
 
 const styles = StyleSheet.create({
+  page: {
+    flex: 1,
+    backgroundColor: "white",
+  },
+
   topText: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -102,9 +118,15 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontFamily: "Billabong",
   },
+
+  storiesContainer: {
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+  },
+
   storyPicsEnviroment: {
     flexDirection: "row",
-    },
+  },
 
   storyItem: {
     alignItems: "center",
@@ -117,48 +139,43 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     borderWidth: 2,
     borderColor: "red",
-    },
+  },
 
-    personalStoryProfilePics: {
-      height: 77,
-      width: 77,
-      borderRadius: 100,
-      },
-
-  storiesContainer: {
-    paddingHorizontal: 12,
-    paddingVertical: 8,
+  personalStoryProfilePics: {
+    height: 77,
+    width: 77,
+    borderRadius: 100,
   },
 
   caption: {
     textAlign: "center",
     fontSize: 10,
     marginTop: 5,
-    color: "black"
+    color: "black",
   },
 
+  // ✅ Post container has a real height so the video can render correctly
   postContainer: {
     marginTop: 5,
-  },
-
-  photo: {
     width: "100%",
     height: 650,
+    backgroundColor: "black",
   },
 
+  // ✅ Video fills the post container
+  postMedia: {
+    width: "100%",
+    height: "100%",
+  },
+
+  // ✅ Overlay on top of video (no magic bottom numbers)
   postTextContainer: {
-    flexDirection: "row",
     position: "absolute",
-    alignItems: "center",
-    bottom: 610,
+    top: 10,
     left: 10,
-  },
-
-  postUsername: {
-    color: "white",
-    fontSize: 13,
-    fontWeight: "bold",
-    paddingLeft: 10,
+    right: 10,
+    flexDirection: "row",
+    alignItems: "center",
   },
 
   postProfilePicture: {
@@ -166,7 +183,17 @@ const styles = StyleSheet.create({
     height: 28,
     borderRadius: 50,
   },
+
+  postUsername: {
+    color: "white",
+    fontSize: 13,
+    fontWeight: "bold",
+    marginLeft: 10,
+    marginRight: 6,
+  },
+
+  // ✅ Push to far right
   threeDots: {
-    left: 240
-  }
+    marginLeft: "auto",
+  },
 });

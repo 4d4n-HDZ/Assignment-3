@@ -10,8 +10,6 @@ import {
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
-import { Tabs } from "expo-router";
-import { NativeTabs } from 'expo-router/unstable-native-tabs';
 import {
   Alert,
   Dimensions,
@@ -24,7 +22,6 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import RocketTakeOff from "../components/rocket";
-import NavigationBar from "../components/navigation";
 
 // gets screen width and makes each image 1 third of the screen
 const screenWidth = Dimensions.get("window").width;
@@ -326,7 +323,7 @@ const s = StyleSheet.create({
   separationIcons: {
     marginTop: 12,
   },
-  
+
   scrollContent: {
     paddingBottom: 90,
   },

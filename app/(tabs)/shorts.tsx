@@ -1,12 +1,17 @@
 import { Ionicons } from "@expo/vector-icons";
-import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { ResizeMode, Video } from "expo-av";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function Shorts() {
   return (
     <View style={styles.container}>
-      <Image 
-      source={require("../../assets/images/shortsimage.png")}
-      style={styles.backgroundImage}
+      <Video
+        source={require("../../assets/videos/shortsvideo.mp4")}
+        style={styles.backgroundImage}
+        resizeMode={ResizeMode.COVER}
+        shouldPlay
+        isLooping
+        isMuted
       />
 
       {/* right side interactive buttons */}
@@ -30,7 +35,7 @@ export default function Shorts() {
 
         <Image
           source={require("../../assets/images/saitlogo.png")}
-          style={styles.logo}/>
+          style={styles.logo} />
       </View>
 
       {/* bottom text */}
@@ -46,17 +51,17 @@ export default function Shorts() {
           Need a specialized course to quickly get...
         </Text>
         <View style={styles.followedinfo}>
-          <Image 
-          source={require("../../assets/images/friendspfp1.png")}
-          style={styles.followProfilePic}/>
+          <Image
+            source={require("../../assets/images/friendspfp1.png")}
+            style={styles.followProfilePic} />
 
-          <Image 
+          <Image
             source={require("../../assets/images/friendspfp2.png")}
-            style={styles.followProfilePic}/>
+            style={styles.followProfilePic} />
 
-          <Image 
+          <Image
             source={require("../../assets/images/friendspfp3.png")}
-            style={styles.followProfilePic}/>
+            style={styles.followProfilePic} />
 
           <Text style={[styles.followBy, { marginLeft: 10 }]}>
             Followed by caiqueccorreia and 33,798 others
